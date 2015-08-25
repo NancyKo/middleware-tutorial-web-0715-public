@@ -1,4 +1,5 @@
 require 'rack'
+require 'pry'
 
 class MyApp
   def initialize
@@ -35,6 +36,7 @@ class AnotherThing
     puts "AnotherThing Called"
     status, headers, response = @app.call(env)
     body = response.first + "AnotherThing Was Here!<br />"
+    # binding.pry
     [status, headers,[body]]
   end
 end
